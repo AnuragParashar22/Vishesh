@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="slider.css"> -->
+</head>
+<body>
+    <div class="home">
+        <img class="img-slide active" src="https://blenwiq.com/wp-content/uploads/2023/02/Game-Design-1-e1678131315709.png" alt="">
+        <img class="img-slide" src="https://images.unsplash.com/photo-1663938973369-7a73834c3ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="">
+        <img class="img-slide" src="https://images.unsplash.com/photo-1663938973369-7a73834c3ddc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="">
+        <img class="img-slide" src="https://images.unsplash.com/photo-1634703303847-2079704c643a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1928&q=80" alt="">
+       <div class="content">
+        <h1>Website. <br> Development</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing.</p>
+        <button>Let's Explore</button>
+       </div>
+       <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        
+       </div>
+    </div>
+    <script>
+      var btn =  document.querySelectorAll(".nav-btn");
+      var images =  document.querySelectorAll(".img-slide");
+      var slide = function(manual){
+        btn.forEach(function(elem){
+            elem.classList.remove("active")
+        })
+        images.forEach(function(elem){
+            elem.classList.remove("active")
+        })
+        btn[manual].classList.add("active")
+        images[manual].classList.add("active")
+      }
+      btn.forEach((elem,i)=>{
+       elem.addEventListener("click",() =>{
+        slide(i);
+       })
+      })
+     
+      var no = 1;
+
+      setInterval(() => {
+    
+        btn.forEach(function(elem){
+            elem.classList.remove("active")
+        })
+        images.forEach(function(elem){
+            elem.classList.remove("active")
+        })
+        btn[no].classList.add("active");
+        images[no].classList.add("active");
+        no = no+1;
+        if(no > 3) no = 0 ;
+      }, 4000);
+
+    </script>
+</body>
+</html>
